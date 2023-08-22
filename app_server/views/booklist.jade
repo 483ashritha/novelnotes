@@ -1,0 +1,70 @@
+extends layout
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1
+          | Books
+          small &nbsp;Find some good books to read!
+  .row
+    .col-xs-12.col-sm-8
+      .row.list-group
+        .col-xs-12.list-group-item
+          h4
+            img.book-cover(src='/images/pride-and-prejudice.jpg', alt='Pride and Prejudice Cover',style="width:10%;height:auto;")
+            a(href='/pride') Pride and Prejudice
+            small &nbsp;
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star-empty
+            span.badge.pull-right.badge-default 100rs
+          
+          p
+            span.label.label-warning by Jane Austen
+            | &nbsp;
+            span.label.label-warning classic romance
+            | &nbsp;
+            
+        .col-xs-12.list-group-item
+          h4
+            img.book-cover(src='/images/1984.jpg', alt='1984 Cover',style="width:10%;height:auto;")
+            a(href='/george') 1984
+            small &nbsp;
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star-empty
+              span.glyphicon.glyphicon-star-empty
+            span.badge.pull-right.badge-default 200rs
+          
+          p
+            span.label.label-warning by george orwell
+            | &nbsp;
+            span.label.label-warning dystopian fiction
+            | &nbsp;
+            
+        .col-xs-12.list-group-item
+          h4
+            img.book-cover(src='images/the great gatsby.jpg', alt="the great gatsby Cover",style="width:10%;height:auto;")
+            a(href='/great') The great gatsby
+            small &nbsp;
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star-empty
+              span.glyphicon.glyphicon-star-empty
+            span.badge.pull-right.badge-default 250rs
+          
+          p
+            span.label.label-warning by F. Scott Fitzgerald
+            | &nbsp;
+            span.label.label-warning Literary fiction
+            | &nbsp;
+    .col-xs-12.col-sm-4
+      p.lead
+        | Reading novels is a journey into diverse worlds, where characters' stories reflect our own emotions and experiences, allowing us to explore new perspectives and gain empathy while igniting our imagination. It's a doorway to escape reality, expand our minds, and embrace the power of storytelling.
+
+

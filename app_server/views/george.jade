@@ -1,0 +1,30 @@
+extends layout  
+
+block content
+  .novelnotes
+    img.book-cover(src='/images/1984.jpg', alt='1984 Cover',style="width:20%;height:auto;")
+    h1 1984
+    p.author George Orwell
+    p.published-year 1949
+
+    h2 Summary
+    p
+      | "1984" is a dystopian novel set in a totalitarian society where the government exercises absolute control over every aspect of citizens' lives. The story follows Winston Smith as he becomes increasingly aware of the manipulation and surveillance by the Party and Big Brother. 
+
+    h2 Review
+    p
+      | Orwell's portrayal of a surveillance state and the suppression of truth is both chilling and thought-provoking. The novel explores themes of power, language, propaganda, and the consequences of unchecked authority.
+
+    p
+      | The bleak and oppressive atmosphere of the society is expertly conveyed through the prose. Orwell's predictions about technology's role in surveillance and manipulation have proven remarkably prescient, making the novel even more relevant in today's digital age.
+
+    h2 Rating
+    .star-rating
+      span ★★★★★  // Display your star rating here
+
+    h2 Your Thoughts
+    form(action='/submit-review', method='POST')
+      textarea(name='user-review', placeholder='Share your thoughts...')
+      button(type='submit') Submit
+
+  // Add more sections as needed, such as comments, related books, etc.

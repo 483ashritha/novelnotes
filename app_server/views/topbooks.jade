@@ -1,0 +1,45 @@
+extends layout 
+
+block content
+  .top-books-page
+    .hero-section
+      h1 Top Recommended Books
+
+    .book-list.flex-container
+      .book-card
+        img.book-cover(src='/images/to kill a mocking bird.jpg', alt='Book 1 Cover', style="width:25%;height:auto;")
+        .book-details
+          h2 To Kill a Mockingbird
+          p.author by Harper Lee
+        
+      .book-card
+        img.book-cover(src='/images/mobydick.jpg', alt='Book 2 Cover', style="width:25%;height:auto;")
+        .book-details
+          h2 Moby-Dick
+          p.author by Herman Melville
+
+      .book-card
+        img.book-cover(src='/images/bravenewworld.jpg', alt='Book 3 Cover', style="width:25%;height:auto;")
+        .book-details
+          h2 Brave New World
+          p.author by Aldous Huxley
+
+      .book-card
+        img.book-cover(src='/images/thegrapesofwrath.jpg', alt='Book 4 Cover', style="width:25%;height:auto;")
+        .book-details
+          h2 The Grapes of Wrath
+          p.author by John Steinbeck
+
+      .book-card
+        img.book-cover(src='/images/tothelighthouse.jpg', alt='Book 5 Cover', style="width:25%;height:auto;")
+        .book-details
+          h2 To the Lighthouse
+          p.author by Virginia Woolf
+        
+      
+
+    .cta-section
+      p
+        | Ready to dive into these exceptional reads? Explore our top recommended books and experience the magic of classic literature.
+
+  

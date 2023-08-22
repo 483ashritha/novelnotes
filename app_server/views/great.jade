@@ -1,0 +1,30 @@
+extends layout  
+
+block content
+  .container
+    img.book-cover(src='images/the great gatsby.jpg', alt="the great gatsby Cover",style="width:20%;height:auto;")
+    h1 The Great Gatsby
+    p.author F. Scott Fitzgerald
+    p.published-year 1925
+
+    h2 Summary
+    p
+      | "The Great Gatsby" is a classic novel set in the Jazz Age of the 1920s. It follows the mysterious millionaire Jay Gatsby and his unrequited love for Daisy Buchanan. The story is narrated by Nick Carraway, who becomes entangled in the lives of these characters and witnesses the excesses and moral decay of the time.
+
+    h2 Review
+    p
+      | Fitzgerald's portrayal of the American Dream and its disillusionment is masterful. The opulence and extravagance of the era are juxtaposed with the underlying emptiness and shallowness of the characters' lives. The symbolism, such as the green light at the end of Daisy's dock, adds depth to the narrative.
+
+    p
+      | The prose is elegant and evocative, capturing the mood of the era and the complex emotions of the characters. While the characters are flawed and often morally ambiguous, they are compelling and emblematic of their time.
+
+    h2 Rating
+    .star-rating
+      span ★★★★☆  
+
+    h2 Your Thoughts
+    form(action='/submit-review', method='POST')
+      textarea(name='user-review', placeholder='Share your thoughts...')
+      button(type='submit') Submit
+
+  
