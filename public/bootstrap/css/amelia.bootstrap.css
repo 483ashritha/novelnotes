@@ -393,7 +393,7 @@ hr {
 }
 
 p {
-  margin: 0 0 10px;
+  margin: 0 0 3%;
 }
 
 .lead {
@@ -508,7 +508,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 24px;
 }
 
 h3,

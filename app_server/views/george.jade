@@ -1,30 +1,32 @@
-extends layout  
+extends layout
 
 block content
-  .novelnotes
-    img.book-cover(src='/images/1984.jpg', alt='1984 Cover',style="width:20%;height:auto;")
-    h1 1984
-    p.author George Orwell
-    p.published-year 1949
+  .row.page-header
+    .col-lg-12
+      h1 Book1
 
-    h2 Summary
-    p
-      | "1984" is a dystopian novel set in a totalitarian society where the government exercises absolute control over every aspect of citizens' lives. The story follows Winston Smith as he becomes increasingly aware of the manipulation and surveillance by the Party and Big Brother. 
+  .row
+    .col-xs-12.col-md-9
+      .row
+        each bookItem in bookItems
+          .col-xs-12.col-sm-6.menu-item
+            .panel.panel-primary
+              .panel-heading
+                h2.panel-title= bookItem.name
+                span.badge.pull-right.badge-default $#{bookItem.price}
+              .panel-body
+                img.book-item-image(src=bookItem.image, alt=bookItem.name)
+                p.book-item-description= bookItem.description
+                p.rating
+                  - var rating = bookItem.rating
+                  each star in [1, 2, 3, 4, 5]
+                    if star <= rating
+                      span.glyphicon.glyphicon-star
+                    else
+                      span.glyphicon.glyphicon-star-empty
+                p.review
+                  = bookItem.review
 
-    h2 Review
-    p
-      | Orwell's portrayal of a surveillance state and the suppression of truth is both chilling and thought-provoking. The novel explores themes of power, language, propaganda, and the consequences of unchecked authority.
-
-    p
-      | The bleak and oppressive atmosphere of the society is expertly conveyed through the prose. Orwell's predictions about technology's role in surveillance and manipulation have proven remarkably prescient, making the novel even more relevant in today's digital age.
-
-    h2 Rating
-    .star-rating
-      span ★★★★★  // Display your star rating here
-
-    h2 Your Thoughts
-    form(action='/submit-review', method='POST')
-      textarea(name='user-review', placeholder='Share your thoughts...')
-      button(type='submit') Submit
-
-  // Add more sections as needed, such as comments, related books, etc.
+  .col-xs-12.col-sm-3
+    p.lead
+      | Explore our diverse collection of books at Novelnotes Library, where captivating stories and literary adventures await. From thrilling mysteries to heartwarming classics, our book offerings promise an unforgettable reading experience.

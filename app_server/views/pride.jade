@@ -1,30 +1,32 @@
-extends layout  
+extends layout
 
 block content
-  .Novelnotes
-    img.book-cover(src='/images/pride-and-prejudice.jpg', alt='Pride and Prejudice Cover',style="width:20%;height:auto;")
-    h1 Pride and Prejudice
-    p.author Jane Austen
-    p.published-year 1813
+  .row.page-header
+    .col-lg-12
+      h1 Book1
 
-    h2 Summary
-    p
-      | "Pride and Prejudice" is a beloved novel set in the early 19th century in England. It revolves around the complex relationships of the Bennet family, particularly the headstrong Elizabeth Bennet and the proud Mr. Darcy. Austen masterfully explores themes of social class, marriage, and personal growth.
+  .row
+    .col-xs-12.col-md-9
+      .row
+        each bookItem in bookItems
+          .col-xs-12.col-sm-6.menu-item
+            .panel.panel-primary
+              .panel-heading
+                h2.panel-title= bookItem.name
+                span.badge.pull-right.badge-default $#{bookItem.price}
+              .panel-body
+                img.book-item-image(src=bookItem.image, alt=bookItem.name)
+                p.book-item-description= bookItem.description
+                p.rating
+                  - var rating = bookItem.rating
+                  each star in [1, 2, 3, 4, 5]
+                    if star <= rating
+                      span.glyphicon.glyphicon-star
+                    else
+                      span.glyphicon.glyphicon-star-empty
+                p.review
+                  = bookItem.review
 
-    h2 Review
-    p
-      | Austen's wit and keen observation of society shine through in this novel. The characters are vividly drawn, and Elizabeth's journey from prejudice to understanding is captivating. The dialogue is sharp and revealing, often laced with humor.
-
-    p
-      | The novel's exploration of marriage as both a social contract and a matter of the heart remains relevant today. The chemistry between Elizabeth and Darcy is palpable, and their slow-burning romance is a testament to Austen's storytelling prowess.
-
-    h2 Rating
-    .star-rating
-      span ★★★★☆  // Display your star rating here
-
-    h2 Your Thoughts
-    form(action='/submit-review', method='POST')
-      textarea(name='user-review', placeholder='Share your thoughts...')
-      button(type='submit') Submit
-
-  // Add more sections as needed, such as comments, related books, etc.
+  .col-xs-12.col-sm-3
+    p.lead
+      | Explore our diverse collection of books at Novelnotes Library, where captivating stories and literary adventures await. From thrilling mysteries to heartwarming classics, our book offerings promise an unforgettable reading experience.
